@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+	int **x;
+	printf("2019038068 Kim Soung Uook\n\n");
+	printf("sizeof(x)   = %lu\n", sizeof(x));    // 주솟값을 저장하는 크기
+	printf("sizeof(*x)  = %lu\n", sizeof(*x));   // 주솟값을 저장하는 크기
+	printf("sizeof(**x) = %lu\n", sizeof(**x));  // **x는 최종적인 data값이므로 결과값이 4
+	return 0;
+}

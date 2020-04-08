@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct student1 {
+	char lastName;
+	int studentId;
+	char grade;
+};
+
+typedef struct {    // typedef를 통해서 struct의 별칭을 student2라 지정 
+	char lastName;
+	int studentId;
+	char grade;
+}student2;
+
+int main(void) {
+	struct student1 st1 = { 'A', 100, 'A' };  // struct student1의 변수 선언 및 data 초기화
+	printf("2019038068 Kim Soung Uook\n\n");
+	printf("st1.lastName   = %c\n", st1.lastName);  
+	printf("st1.studentId  = %d\n", st1.studentId);
+	printf("st1.grade      = %c\n", st1.grade);
+
+	student2 st2 = { 'B', 200, 'B' };       // struct를 typedef를 사용해 student2라 별칭을 적고 이에 대한 변수 선언 및 data초기화 
+	printf("\nst2.lastName   = %c\n", st2.lastName);
+	printf("st2.studentId  = %d\n", st2.studentId);
+	printf("st2.grade      = %c\n", st2.grade);
+
+	student2 st3;
+	 
+	st3 = st2; // st2를 st3에 복사 
+	printf("\nst3.lastName   = %c\n", st3.lastName);
+	printf("st3.studentId  = %d\n", st3.studentId);
+	printf("st3.grade      = %c\n", st3.grade);
+
+	/*
+	if(st3 == st2){                // 이것과 같이 비교 불가, st3와 st2의 각각의 원소들끼리 비교 가능 
+		printf("equal\n");
+	}else{
+		printf("not equal\n");
+	
+	*/
+}

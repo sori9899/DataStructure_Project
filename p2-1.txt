@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define MAX_SIZE 100	
+
+float sum(float [], int);		
+float input[MAX_SIZE], answer;	
+int i;	
+
+int main(void){
+	printf("2019038068 Kim Soung Uook\n\n");
+	for (i = 0; i < MAX_SIZE; i++) {
+		input[i] = i;                   
+	}
+
+	printf("address of input = %p\n", input);	// input의 주솟값 출력, 즉 input[0]의 주솟값 출력
+
+	answer = sum(input, MAX_SIZE);		
+	printf("The sum is :%f\n", answer);
+
+	return 0;
+}
+
+float sum(float list[], int n){
+	printf("value of list = %p\n", list);       // list의 값 출력, 즉 input을 인수로 받았으므로, input[0]의 주솟값 출력	
+	printf("address of list = %p\n\n", &list);  // list의 주솟값 출력 
+	 
+	int i;	
+	float tempsum = 0;	
+	for (i = 0; i < n; i++) {
+		tempsum += list[i];    //input의 각각에 인덱스에 해당하는 data값들을 전부 더하기
+	}
+		
+	return tempsum;				
+}
