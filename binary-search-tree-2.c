@@ -7,7 +7,7 @@
  * at Chungbuk National University
  *
  */
-
+// rightë…¸ë“œë¶€í„° íƒìƒ‰í•˜ëŠ” ë°©ì‹ìœ¼ë¡œ ì½”ë“œë¥¼ ì‘ì„±í•˜ì˜€ìŠµë‹ˆë‹¤
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -58,7 +58,7 @@ int main()
 	int key;
 	Node* head = NULL;
 
-	printf("2019038068 ±è¼º¿í");
+	printf("2019038068 ê¹€ì„±ìš±");
 	do {
 		printf("\n\n");
 		printf("----------------------------------------------------------------\n");
@@ -112,7 +112,7 @@ int main()
 	return 1;
 }
 
-// ³ëµå¸¦ ÃÊ±âÈ­ ÇÏ´Â ÇÔ¼ö
+// ë…¸ë“œë¥¼ ì´ˆê¸°í™” í•˜ëŠ” í•¨ìˆ˜
 int initializeBST(Node** h) {
 
 	/* if the tree is not empty, then remove all allocated nodes from the tree*/
@@ -133,7 +133,7 @@ int initializeBST(Node** h) {
 }
 
 
-// Àç±ÍÀû ¹æ½ÄÀ¸·Î inorder Å½»ö
+// ì¬ê·€ì  ë°©ì‹ìœ¼ë¡œ inorder íƒìƒ‰
 void recursiveInorder(Node* ptr)
 {
 	if (ptr) {
@@ -146,48 +146,48 @@ void recursiveInorder(Node* ptr)
 /**
  * textbook: p 224
  */
- // ¹İº¹Àû ¹æ½ÄÀ¸·Î inordor Å½»ö
+ // ë°˜ë³µì  ë°©ì‹ìœ¼ë¡œ inordor íƒìƒ‰
 void iterativeInorder(Node* node)
 {
 	for (;;) {
-		// ¹«ÇÑ¹İº¹
+		// ë¬´í•œë°˜ë³µ
 		for (; node; node = node->left) {
-			// nodeÀÇ ¿ŞÂÊºÎÅÍ Å½»öÇØ¾ß ÇÔÀ¸·Î ÀÏ´Ü ¿ŞÂÊºÎÅÍ Å½»ö
+			// nodeì˜ ì™¼ìª½ë¶€í„° íƒìƒ‰í•´ì•¼ í•¨ìœ¼ë¡œ ì¼ë‹¨ ì™¼ìª½ë¶€í„° íƒìƒ‰
 			push(node);
-			// stack¿¡ nodeÀÇ ÁÖ¼Ò ÀúÀå
+			// stackì— nodeì˜ ì£¼ì†Œ ì €ì¥
 		}
 		node = pop();
-		// ¿ŞÂÊ¿¡ ´ëÇÑ Å½»öÀÌ ´Ù ³¡³µÀ¸¸é pop()
+		// ì™¼ìª½ì— ëŒ€í•œ íƒìƒ‰ì´ ë‹¤ ëë‚¬ìœ¼ë©´ pop()
 
 		if (node == NULL) break;
-		// ¸¸¾à topÀÌ -1ÀÎ°æ¿ì NULLÀ» ¹İÈ¯ÇÏ¸ç, ÀÌ´Â °ğ ½ºÅÃÀÌ ºñ¾ú´Ù´Â ¶æÀÌ¹Ç·Î Á¾·á
+		// ë§Œì•½ topì´ -1ì¸ê²½ìš° NULLì„ ë°˜í™˜í•˜ë©°, ì´ëŠ” ê³§ ìŠ¤íƒì´ ë¹„ì—ˆë‹¤ëŠ” ëœ»ì´ë¯€ë¡œ ì¢…ë£Œ
 
 		printf(" [%d] ", node->key);
-		// nodeÀÇ data °ª Ãâ·Â
+		// nodeì˜ data ê°’ ì¶œë ¥
 		node = node->right;
-		// nodeÀÇ ¿À¸¥ÂÊÀ¸·Î ÀÌµ¿
+		// nodeì˜ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì´ë™
 	}
 }
 
 /**
  * textbook: p 225
  */
- // ¹İº¹Àû ¹æ½ÄÀ¸·Î ¤·³ëµåÀÇ ·¡¹ë¼ø Ãâ·Â
+ // ë°˜ë³µì  ë°©ì‹ìœ¼ë¡œ ã…‡ë…¸ë“œì˜ ë˜ë°¸ìˆœ ì¶œë ¥
 void levelOrder(Node* ptr)
 {
 	front = 0;
 	rear = 0;
-	// ¿øÇü Å¥¿¡¼± front°¡ °¡¸®Å°´Â °ªÀ» °ø¹éÀ¸·Î µÎ¾î ÀÌ¸¦ ÀÌ¿ëÇØ
-	// °¡µæÂù »óÅÂ¿Í ºñ¾îÀÖ´Â »óÅÂ¸¦ ±¸ºĞÇÔÀ¸·Î 0À¸·Î ÃÊ±âÈ­
+	// ì›í˜• íì—ì„  frontê°€ ê°€ë¦¬í‚¤ëŠ” ê°’ì„ ê³µë°±ìœ¼ë¡œ ë‘ì–´ ì´ë¥¼ ì´ìš©í•´
+	// ê°€ë“ì°¬ ìƒíƒœì™€ ë¹„ì–´ìˆëŠ” ìƒíƒœë¥¼ êµ¬ë¶„í•¨ìœ¼ë¡œ 0ìœ¼ë¡œ ì´ˆê¸°í™”
 	enQueue(ptr);
-	// ÃÊ±â°ªÀ» »ğÀÔÈÄ
+	// ì´ˆê¸°ê°’ì„ ì‚½ì…í›„
 	for (;;) {
 		ptr = deQueue(ptr);
-		// stack¿¡ ÀÖ´Â °ªÀ» °¡Á®¿Â´Ù
+		// stackì— ìˆëŠ” ê°’ì„ ê°€ì ¸ì˜¨ë‹¤
 		if (!ptr) break;
-		// ±×°ªÀÌ NULLÀÌ ¾Æ´Ï¶ó¸é
+		// ê·¸ê°’ì´ NULLì´ ì•„ë‹ˆë¼ë©´
 		printf(" [%d] ", ptr->key);
-		// Ãâ·ÂÈÄ ÀÚ½Ä³ëµå »ğÀÔ
+		// ì¶œë ¥í›„ ìì‹ë…¸ë“œ ì‚½ì…
 		if (ptr->left != NULL) {
 			enQueue(ptr->left);
 		}
@@ -197,7 +197,7 @@ void levelOrder(Node* ptr)
 	}
 }
 
-// ³ëµå¸¦ »ğÀÔÇÏ´Â ÇÔ¼ö
+// ë…¸ë“œë¥¼ ì‚½ì…í•˜ëŠ” í•¨ìˆ˜
 int insert(Node* head, int key)
 {
 	Node* newNode = (Node*)malloc(sizeof(Node));
@@ -241,7 +241,7 @@ int insert(Node* head, int key)
 	return 1;
 }
 
-// ³ëµå¸¦ »èÁ¦ÇÏ´Â ÇÔ¼ö
+// ë…¸ë“œë¥¼ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
 int deleteNode(Node* head, int key)
 {
 	Node *temp = head->left;
@@ -249,12 +249,12 @@ int deleteNode(Node* head, int key)
 	Node *previous = head;
 	for (;;) {
 		if (temp == NULL || temp->key == key) {
-			// ¹İº¹ÇÏ¸ç °Ë»ç, temp°¡ NULLÀÎ °æ¿ì temp->key°ªÀ» °Ë»çÇÏ¸é ¿À·ù°¡ ¹ß»ıÇÔÀ¸·Î temp==NULLºÎÅÍ °Ë»ç
-			// ORÀÇ Æ¯¼º»ó µÑÁß ÇÏ³ª¶óµµ ÂüÀÌ¸é ÂüÀ¸·Î ÇØ¼®ÇÏ±â ¶§¹®¿¡ ¾ÕÀÇ Á¶°ÇÀÌ ÂüÀÏ°æ¿ì µÚ¸¦ °Ë»çÇÏÁö ¾Ê´Â ¹æ½Ä ÀÌ¿ë
+			// ë°˜ë³µí•˜ë©° ê²€ì‚¬, tempê°€ NULLì¸ ê²½ìš° temp->keyê°’ì„ ê²€ì‚¬í•˜ë©´ ì˜¤ë¥˜ê°€ ë°œìƒí•¨ìœ¼ë¡œ temp==NULLë¶€í„° ê²€ì‚¬
+			// ORì˜ íŠ¹ì„±ìƒ ë‘˜ì¤‘ í•˜ë‚˜ë¼ë„ ì°¸ì´ë©´ ì°¸ìœ¼ë¡œ í•´ì„í•˜ê¸° ë•Œë¬¸ì— ì•ì˜ ì¡°ê±´ì´ ì°¸ì¼ê²½ìš° ë’¤ë¥¼ ê²€ì‚¬í•˜ì§€ ì•ŠëŠ” ë°©ì‹ ì´ìš©
 			break;
 		}
 		previous = temp;
-		// ³ªÁß¿¡ temp¿ÍÀÇ ¿¬°áÀ» ²÷±â À§ÇØ previous¿¡ ÀÌµ¿ÇÏ±â °Ç tempÀÇ À§Ä¡ ÀúÀå
+		// ë‚˜ì¤‘ì— tempì™€ì˜ ì—°ê²°ì„ ëŠê¸° ìœ„í•´ previousì— ì´ë™í•˜ê¸° ê±´ tempì˜ ìœ„ì¹˜ ì €ì¥
 		if (temp->key > key) {
 			temp = temp->left;
 		}
@@ -264,15 +264,15 @@ int deleteNode(Node* head, int key)
 	}
 
 	if (temp == NULL) {
-		// Ã£°íÀÚ ÇÏ´Â key°ªÀÌ ¾ø´Â °æ¿ì
+		// ì°¾ê³ ì í•˜ëŠ” keyê°’ì´ ì—†ëŠ” ê²½ìš°
 		printf(" [%d] is not found", key);
 		return -1;
 	}
 	else {
 		if (temp->left == NULL && temp->right == NULL) {
-			// key°ªÀÌ ÀÖ´Â ³ëµå¿¡ ÀÚ½Ä³ëµå°¡ ¾ø´Â °æ¿ì
+			// keyê°’ì´ ìˆëŠ” ë…¸ë“œì— ìì‹ë…¸ë“œê°€ ì—†ëŠ” ê²½ìš°
 			if (previous->left == temp) {
-				// temp¿¡ ÇØ´çÇÏ´Â ³ëµå¸¦ Ã£¾Æ ¿¬°á ²÷¾îÁÖ±â
+				// tempì— í•´ë‹¹í•˜ëŠ” ë…¸ë“œë¥¼ ì°¾ì•„ ì—°ê²° ëŠì–´ì£¼ê¸°
 				previous->left = NULL;
 			}
 			else {
@@ -284,20 +284,20 @@ int deleteNode(Node* head, int key)
 		else {
 			temp2 = temp;
 			if (temp->right != NULL) {
-				// key°ªÀÌ ÀÖ´Â ³ëµå¿¡ ÀÚ½Ä³ëµå°¡ ÀÖ°í, ±× ÀÚ½Ä³ëµîÀÇ rigthÀÚ½ÄÀÌ ÀÖ´Â °æ¿ì
+				// keyê°’ì´ ìˆëŠ” ë…¸ë“œì— ìì‹ë…¸ë“œê°€ ìˆê³ , ê·¸ ìì‹ë…¸ë“±ì˜ rigthìì‹ì´ ìˆëŠ” ê²½ìš°
 				previous = NULL;
-				// ±âÁ¸ÀÇ previous´Â temp2 ÀÌÀüÀÇ ³ëµå¸¦ °¡¸®Å°°í ÀÖÀ¸¹Ç·Î ÃÊ±âÈ­
+				// ê¸°ì¡´ì˜ previousëŠ” temp2 ì´ì „ì˜ ë…¸ë“œë¥¼ ê°€ë¦¬í‚¤ê³  ìˆìœ¼ë¯€ë¡œ ì´ˆê¸°í™”
 				temp = temp->right;
 				for (; temp->left; previous = temp, temp = temp->left);
-				//tempÀÇ left°ªÁß °¡Àå ÀÛÀº °ªÀ» Ã£¾Æ¼­ ÀÌµ¿
+				//tempì˜ leftê°’ì¤‘ ê°€ì¥ ì‘ì€ ê°’ì„ ì°¾ì•„ì„œ ì´ë™
 				temp2->key = temp->key;
-				// key°ª ÀÌµ¿
+				// keyê°’ ì´ë™
 				if (previous != NULL) {
-					//temp¿¡ left³ëµå°¡ Á¸ÀçÇÒ °æ¿ì
+					//tempì— leftë…¸ë“œê°€ ì¡´ì¬í•  ê²½ìš°
 					previous->left = temp->right;
 				}
 				else {
-					// temp¿¡ left ³ëµå°¡ Á¸Á¦ÇÏÁö ¾ÊÀ» °æ¿ì
+					// tempì— left ë…¸ë“œê°€ ì¡´ì œí•˜ì§€ ì•Šì„ ê²½ìš°
 					temp2->right = temp->right;
 				}
 				temp->right = NULL;
@@ -305,21 +305,21 @@ int deleteNode(Node* head, int key)
 				return 0;
 			}
 			else {
-				// key°ªÀÌ ÀÖ´Â ³ëµå¿¡ ÀÚ½Ä³ëµå°¡ ÀÖ°í, ±× ÀÚ½Ä³ëµîÀÇ leftÀÚ½Ä¸¸ ÀÖ´Â °æ¿ì
+				// keyê°’ì´ ìˆëŠ” ë…¸ë“œì— ìì‹ë…¸ë“œê°€ ìˆê³ , ê·¸ ìì‹ë…¸ë“±ì˜ leftìì‹ë§Œ ìˆëŠ” ê²½ìš°
 				temp2 = temp;
 				previous = NULL;
-				// ±âÁ¸ÀÇ previous´Â temp2 ÀÌÀüÀÇ ³ëµå¸¦ °¡¸®Å°°í ÀÖÀ¸¹Ç·Î ÃÊ±âÈ­
+				// ê¸°ì¡´ì˜ previousëŠ” temp2 ì´ì „ì˜ ë…¸ë“œë¥¼ ê°€ë¦¬í‚¤ê³  ìˆìœ¼ë¯€ë¡œ ì´ˆê¸°í™”
 				temp = temp->left;
 				for (; temp->right; previous = temp, temp = temp->right);
-				//tempÀÇ right°ªÁß °¡Àå ÀÛÀº Å«°ªÀ» Ã£¾Æ¼­ ÀÌµ¿
+				//tempì˜ rightê°’ì¤‘ ê°€ì¥ ì‘ì€ í°ê°’ì„ ì°¾ì•„ì„œ ì´ë™
 				temp2->key = temo->key;
-				// key°ª ÀÌµ¿
+				// keyê°’ ì´ë™
 				if (previous != NULL) {
-					//temp¿¡ right³ëµå°¡ Á¸ÀçÇÒ °æ¿ì
+					//tempì— rightë…¸ë“œê°€ ì¡´ì¬í•  ê²½ìš°
 					previous->right = temp->left;
 				}
 				else {
-					// temp¿¡ right ³ëµå°¡ Á¸Á¦ÇÏÁö ¾ÊÀ» °æ¿ì
+					// tempì— right ë…¸ë“œê°€ ì¡´ì œí•˜ì§€ ì•Šì„ ê²½ìš°
 					temp2->left = temp->left;
 				}
 				temp->left = NULL;
@@ -330,7 +330,7 @@ int deleteNode(Node* head, int key)
 	}
 }
 
-// Àç±ÍÀû ¹æ½ÄÀ¸·Î ³ëµå¸¦ ÇØÃ¼ÇÏ´Â ÇÔ¼ö
+// ì¬ê·€ì  ë°©ì‹ìœ¼ë¡œ ë…¸ë“œë¥¼ í•´ì²´í•˜ëŠ” í•¨ìˆ˜
 void freeNode(Node* ptr)
 {
 	if (ptr) {
@@ -340,7 +340,7 @@ void freeNode(Node* ptr)
 	}
 }
 
-// ³ëµå¸¦ ÇØÃ¼ÇÏ´Â ÇÔ¼ö
+// ë…¸ë“œë¥¼ í•´ì²´í•˜ëŠ” í•¨ìˆ˜
 int freeBST(Node* head)
 {
 
@@ -359,8 +359,8 @@ int freeBST(Node* head)
 }
 
 
-// stackÀ» »ç¿ëÇÏ±â À§ÇÑ ÇÔ¼öµéÀÔ´Ï´Ù
-// stack¿¡ ÀÖ´Â °ªÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+// stackì„ ì‚¬ìš©í•˜ê¸° ìœ„í•œ í•¨ìˆ˜ë“¤ì…ë‹ˆë‹¤
+// stackì— ìˆëŠ” ê°’ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 Node* pop()
 {
 	Node* temp = NULL;
@@ -371,7 +371,7 @@ Node* pop()
 	return temp;
 }
 
-// stack¿¡ °ªÀ» Áı¾î³Ö´Â ÇÔ¼ö
+// stackì— ê°’ì„ ì§‘ì–´ë„£ëŠ” í•¨ìˆ˜
 void push(Node* aNode)
 {
 	if (top + 1 != MAX_STACK_SIZE)
@@ -381,13 +381,13 @@ void push(Node* aNode)
 }
 
 
-// Å¥¸¦ ±¸ÇöÇÏ±â À§ÇÑ ÇÔ¼öµéÀÔ´Ï´Ù
-// Å¥¿¡ ÀÖ´Â °ªÀ» ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+// íë¥¼ êµ¬í˜„í•˜ê¸° ìœ„í•œ í•¨ìˆ˜ë“¤ì…ë‹ˆë‹¤
+// íì— ìˆëŠ” ê°’ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 Node* deQueue()
 {
 	Node* temp = NULL;
 	if (front != rear) {
-		// Å¥°¡ ºñ¾îÀÖÁö ¾Ê´Ù¸é »èÁ¦
+		// íê°€ ë¹„ì–´ìˆì§€ ì•Šë‹¤ë©´ ì‚­ì œ
 		front = (front + 1) % MAX_QUEUE_SIZE;
 		temp = queue[front];
 		queue[front] = NULL;
@@ -395,11 +395,11 @@ Node* deQueue()
 	return temp;
 }
 
-// Å¥¿¡ °ªÀ» Áı¾î³Ö´Â ÇÔ¼ö
+// íì— ê°’ì„ ì§‘ì–´ë„£ëŠ” í•¨ìˆ˜
 void enQueue(Node* aNode)
 {
 	if (front != rear + 1) {
-		// Å¥°¡ ´Ù Â÷Áö ¾Ê¾Ò´Ù¸é »ğÀÔ
+		// íê°€ ë‹¤ ì°¨ì§€ ì•Šì•˜ë‹¤ë©´ ì‚½ì…
 		rear = (rear + 1) % MAX_QUEUE_SIZE;
 		queue[rear] = aNode;
 	}
